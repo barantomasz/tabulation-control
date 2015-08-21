@@ -1,7 +1,7 @@
 {
   "name": "tabulation-control",
   "main": "./lib/tabulation-control",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Add tabulation information and controls to the Atom status bar. ",
   "repository": "https://github.com/driskell/tabulation-control",
   "author": "Jason Woods <devel@jasonwoods.me.uk> (https://github.com/driskell)",
