@@ -1,3 +1,6 @@
+## 1.0.4
+* Absolute URLS for images in README.md to fix atom.io display
+
 ## 1.0.3
 * Add images to README.md
 
