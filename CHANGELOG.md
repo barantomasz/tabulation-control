@@ -1,3 +1,6 @@
+## 1.0.3
+* Add images to README.md
+
 ## 1.0.2
 * Add license file
 
