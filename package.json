@@ -1,7 +1,7 @@
 {
   "name": "tabulation-control",
   "main": "./lib/tabulation-control",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Add tabulation information and controls to the Atom status bar.",
   "keywords": [
     "spaces",
