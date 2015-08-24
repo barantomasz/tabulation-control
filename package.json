@@ -4,9 +4,11 @@
   "version": "1.0.4",
   "description": "Add tabulation information and controls to the Atom status bar.",
   "keywords": [
-    "tabs",
     "spaces",
-    "tablength"
+    "tablength",
+    "tabulation",
+    "indentation",
+    "indent"
   ],
   "repository": {
     "type": "git",

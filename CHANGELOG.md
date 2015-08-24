@@ -1,3 +1,6 @@
+## 1.0.5
+* Add extra keywords to help people find us
+
 ## 1.0.4
 * Absolute URLS for images in README.md to fix atom.io display
 
