@@ -37,7 +37,7 @@ class TabulationControlStatusView extends View
   updateStatusBar: ->
     @activeTextEditor = atom.workspace.getActiveTextEditor()
     unless @activeTextEditor?
-      @element.setText('-')
+      @element.setText('[ - ]')
       return
 
     # Grab the invisible characters
@@ -82,7 +82,11 @@ class TabulationControlStatusView extends View
 
     @updateContextMenu(newContextMenuItems)
 
-    @element.setText("#{indentType}")
+    # The square brackets here make the click area bigger, without them it can
+    # become hard to click the text to get the context menu
+    # With square brackets it is also then consistent with the context menu
+    # items which also have square brackets
+    @element.setText("[ #{indentType} ]")
 
   processConvertCommand: (size) ->
     return unless @activeTextEditor?
