@@ -1,3 +1,7 @@
+## 1.0.6
+* Make the status bar text click area bigger by using square brackets again
+* Only display context menu on click if we have an active editor
+
 ## 1.0.5
 * Add extra keywords to help people find us
 
