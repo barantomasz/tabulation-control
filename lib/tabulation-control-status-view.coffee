@@ -18,8 +18,12 @@ class TabulationControlStatusView extends View
     @updateStatusBar()
 
     @element.addEventListener 'click', (event) ->
-      # TODO: This is not in the API... But I like this feature
-      atom.contextMenu.showForEvent(event)
+      # Only show the context menu if we have an active editor
+      @activeTextEditor = atom.workspace.getActiveTextEditor()
+      if @activeTextEditor?
+        # TODO(driskell): This is not in the API... But I like this feature
+        # Use a selectlistview?
+        atom.contextMenu.showForEvent(event)
 
   updateContextMenu: (newContextMenuItems) ->
     if @contextMenuAttached
