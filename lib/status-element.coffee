@@ -7,7 +7,7 @@ class TabulationControlStatusElement extends HTMLElement
 
   init: (statusBar) ->
     statusBar.addRightTile(item: this, priority: 100)
-    @model = new TabulationControlStatusView(this)
+    @view = new TabulationControlStatusView(this)
 
   createdCallback: ->
     @setAttribute 'class', 'inline-block'
@@ -22,8 +22,8 @@ class TabulationControlStatusElement extends HTMLElement
   detachedCallback: ->
     @detached = true
 
-  getModel: ->
-    @model
+  getView: ->
+    @view
 
   setText: (text) ->
     @tabulationStatus.text(text)
@@ -35,7 +35,7 @@ for item in ['t', 1, 2, 3, 4, 6, 8]
   createCallback = (cb_command, cb_item, cb) ->
     callback = {}
     callback[cb_command] = (event) ->
-      @getModel()[cb](cb_item)
+      @getView()[cb](cb_item)
     callback
 
   command = "tabulation-control:convert_#{item}"
