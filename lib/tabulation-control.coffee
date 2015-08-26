@@ -1,5 +1,3 @@
-# coffeelint: disable=no_tabs
-
 TabulationControlStatusElement = require './status-element'
 
 module.exports =

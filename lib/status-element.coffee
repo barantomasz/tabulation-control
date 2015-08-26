@@ -1,5 +1,3 @@
-# coffeelint: disable=no_tabs
-
 _ = require 'underscore-plus'
 {$} = require 'atom-space-pen-views'
 TabulationControlStatusView = require './status-view'
