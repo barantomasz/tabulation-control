@@ -1,8 +1,8 @@
 # coffeelint: disable=no_tabs
 
 _ = require 'underscore-plus'
-{$, View} = require 'atom-space-pen-views'
-TabulationControlStatusView = require './tabulation-control-status-view'
+{$} = require 'atom-space-pen-views'
+TabulationControlStatusView = require './status-view'
 
 class TabulationControlStatusElement extends HTMLElement
   attached: false

@@ -1,6 +1,6 @@
 # coffeelint: disable=no_tabs
 
-TabulationControlStatusElement = require './tabulation-control-status-element'
+TabulationControlStatusElement = require './status-element'
 
 module.exports =
   deactivate: ->
