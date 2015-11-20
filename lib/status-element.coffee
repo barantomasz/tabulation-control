@@ -28,6 +28,12 @@ class TabulationControlStatusElement extends HTMLElement
   setText: (text) ->
     @tabulationStatus.text(text)
 
+  show: ->
+    this.style.display = ''
+
+  hide: ->
+    this.style.display = 'none'
+
   clear: ->
     @setText('')
 

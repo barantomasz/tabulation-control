@@ -1,3 +1,8 @@
+## 1.0.7
+* Do not show the status bar information when there isn't an active editor
+* Fix an issue where the editor would switch to hard tabs after the status bar
+information had already been updated to say soft tabs
+
 ## 1.0.6
 * Make the status bar text click area bigger by using square brackets again
 * Only display context menu on click if we have an active editor

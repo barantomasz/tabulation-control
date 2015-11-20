@@ -13,14 +13,23 @@ class TabulationControlStatusView extends View
     @setUpSubscriptions()
 
   setUpSubscriptions: ->
-    atom.workspace.observeActivePaneItem (activePaneItem) => @updateStatusBar()
-    atom.workspace.observeTextEditors (textEditor) => @updateStatusBar()
+    atom.workspace.observeActivePaneItem (activePaneItem) =>
+      @updateStatusBar()
+    atom.workspace.observeTextEditors (textEditor) =>
+      @updateStatusBar()
+      # TODO(driskell): Without having a periodic updater how can we detect that
+      # tokenisation has completed? Until tokenisation completes we cannot
+      # reliably detect the soft tabs setting for this editor when tabType is
+      # 'auto'. Workaround for now is to hit the private API for the
+      # displayBuffer so we can subscribe to the tokenisation event...
+      textEditor.displayBuffer?.onDidTokenize =>
+        @updateStatusBar()
     @updateStatusBar()
 
     @element.addEventListener 'click', (event) ->
       # Only show the context menu if we have an active editor
-      @activeTextEditor = atom.workspace.getActiveTextEditor()
-      if @activeTextEditor?
+      activeTextEditor = atom.workspace.getActiveTextEditor()
+      if activeTextEditor?
         # TODO(driskell): This is not in the API... But I like this feature
         # Use a selectlistview?
         atom.contextMenu.showForEvent(event)
@@ -37,7 +46,7 @@ class TabulationControlStatusView extends View
   updateStatusBar: ->
     @activeTextEditor = atom.workspace.getActiveTextEditor()
     unless @activeTextEditor?
-      @element.setText('[ - ]')
+      @element.hide()
       return
 
     # Grab the invisible characters
@@ -87,6 +96,8 @@ class TabulationControlStatusView extends View
     # With square brackets it is also then consistent with the context menu
     # items which also have square brackets
     @element.setText("[ #{indentType} ]")
+
+    @element.show()
 
   processConvertCommand: (size) ->
     return unless @activeTextEditor?
