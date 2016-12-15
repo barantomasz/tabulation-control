@@ -17,12 +17,7 @@ class TabulationControlStatusView extends View
       @updateStatusBar()
     atom.workspace.observeTextEditors (textEditor) =>
       @updateStatusBar()
-      # TODO(driskell): Without having a periodic updater how can we detect that
-      # tokenisation has completed? Until tokenisation completes we cannot
-      # reliably detect the soft tabs setting for this editor when tabType is
-      # 'auto'. Workaround for now is to hit the private API for the
-      # displayBuffer so we can subscribe to the tokenisation event...
-      textEditor.displayBuffer?.onDidTokenize =>
+      textEditor.onDidTokenize =>
         @updateStatusBar()
     @updateStatusBar()
 

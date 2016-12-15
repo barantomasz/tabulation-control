@@ -1,3 +1,6 @@
+## 1.0.8
+* Fix a TODO which also fixes a deprecation - onDidTokenize is now available in TextEditor
+
 ## 1.0.7
 * Do not show the status bar information when there isn't an active editor
 * Fix an issue where the editor would switch to hard tabs after the status bar
